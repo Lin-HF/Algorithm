@@ -1,3 +1,4 @@
+import java.util.*;
 class Point{
   int x;
   int y;
@@ -12,8 +13,8 @@ class Solution {
       return 0;
     }
     int result = 0;
-    for (int x = 0; i < grid.length; x++) {
-      for (int y = 0; j < grid[0].length; y++) {
+    for (int x = 0; x < grid.length; x++) {
+      for (int y = 0; y < grid[0].length; y++) {
         if (grid[x][y] == '1'){
           result++;
           mark(grid, x ,y);
@@ -21,9 +22,9 @@ class Solution {
       }
     }
     return result;
-  }
+}
 
-  private void mark(char[][] grid, int x, int y) {
+private void mark(char[][] grid, int x, int y) {
     Queue<Point> queue = new LinkedList<>();
     queue.offer(new Point(x, y));
     int[] dx = {0, 1, 0, -1};
